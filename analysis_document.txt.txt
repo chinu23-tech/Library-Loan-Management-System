@@ -1,0 +1,100 @@
+LIBRARY LOAN MANAGEMENT SYSTEM ANALYSIS
+
+1. INTRODUCTION
+
+The Library Loan Management System is developed
+using Java, JDBC, and Apache Derby database.
+The project demonstrates transaction management,
+database connectivity, and performance evaluation
+using JDBC.
+
+--------------------------------------------------
+
+2. TRANSACTION MANAGEMENT
+
+The application uses explicit transaction control
+through:
+
+- setAutoCommit(false)
+- commit()
+- rollback()
+- savepoint
+
+During loan processing, multiple database
+operations are executed together as a single
+transaction.
+
+These operations include:
+- Checking book availability
+- Updating book status
+- Inserting loan record
+- Updating member active loan count
+
+If any operation fails, rollback() is executed
+to maintain database consistency.
+
+--------------------------------------------------
+
+3. ACID PROPERTIES
+
+The project demonstrates ACID properties:
+
+Atomicity:
+All operations inside a transaction either
+complete successfully or rollback entirely.
+
+Consistency:
+Database constraints and relationships remain
+valid after each transaction.
+
+Isolation:
+Transactions are isolated to avoid inconsistent
+data during execution.
+
+Durability:
+Committed data remains permanently stored in
+the database.
+
+--------------------------------------------------
+
+4. PERFORMANCE EVALUATION
+
+Performance benchmarking was performed using:
+
+- Individual Insert
+- Batch Insert
+- Statement
+- PreparedStatement
+
+Results showed that batch insert operations
+performed faster than individual inserts because
+multiple records are processed together.
+
+PreparedStatement performed better than
+Statement because SQL queries are precompiled
+and reused efficiently.
+
+--------------------------------------------------
+
+5. JDBC BEST PRACTICES USED
+
+The project follows JDBC best practices:
+
+- PreparedStatement usage
+- Try-with-resources
+- Explicit transaction handling
+- Proper exception handling
+- Database indexing
+
+--------------------------------------------------
+
+6. CONCLUSION
+
+The project successfully demonstrates JDBC
+transaction management and performance
+optimization using Apache Derby database.
+
+The application provides reliable database
+operations with proper rollback and commit
+mechanisms while also comparing different JDBC
+execution strategies.

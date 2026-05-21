@@ -1,0 +1,3 @@
+Test Type,Observation
+Batch Insert,Faster than individual insert
+PreparedStatement,Better performance and safer
